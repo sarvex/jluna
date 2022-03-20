@@ -20,6 +20,10 @@ set_usertype_enabled(NonJuliaType);
 int main()
 {
     State::initialize();
+
+    State::safe_eval("sqrt(-1)");
+    return 0;
+
     Test::initialize();
 
     Test::test("catch c exception", [](){
