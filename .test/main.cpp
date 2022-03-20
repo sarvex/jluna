@@ -21,7 +21,10 @@ int main()
 {
     State::initialize();
 
-    State::safe_eval("sqrt(-1)");
+    jl_gc_pause;
+
+    jl_gc_unpause;
+    safe_eval("for i in vec println(i) end");
     return 0;
 
     Test::initialize();
